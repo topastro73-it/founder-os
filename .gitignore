@@ -1,0 +1,48 @@
+.env
+.DS_Store
+node_modules/
+*.tmp
+.claude/worktrees/
+scripts/fattureincloud-mcp/.git
+
+# iCloud Drive
+*.nosync
+.git.nosync
+
+# Obsidian — file specifici per macchina (non sincronizzare via Git)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace.json.nosync
+.obsidian/workspace-mobile.json.nosync
+
+# Obsidian — plugin binari (scaricati dallo script, non committati)
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/manifest.json
+.obsidian/plugins/*/styles.css
+
+# Obsidian — cache
+.obsidian/.obsidian-crypt
+.trash/
+
+# Editor — backup files
+*.save
+
+# Python — bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Office — lock files temporanei (Word/PowerPoint/Excel aperti)
+~$*
+
+# Privacy — file con dati personali sensibili (vedi CLAUDE.md regola 22)
+*-signed-*.md
+iban-*.md
+cf-*.md
+*-cap-table-*.md
+personal/
+inbox/
+
+# iCloud sync artifacts (duplicati generati dal sync iCloud Drive)
+* 2.md
+* 3.md

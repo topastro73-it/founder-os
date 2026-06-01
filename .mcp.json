@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "fattureincloud": {
+      "command": "python3",
+      "args": [
+        "mcp-servers/fattureincloud-mcp/server.py"
+      ],
+      "env": {
+        "FIC_ACCESS_TOKEN": "${FIC_ACCESS_TOKEN}",
+        "FIC_COMPANY_ID": "${FIC_COMPANY_ID}",
+        "FIC_SENDER_EMAIL": "${FIC_SENDER_EMAIL}"
+      }
+    },
+    "clickup": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@taazkareem/clickup-mcp-server"
+      ],
+      "env": {
+        "CLICKUP_API_KEY": "${CLICKUP_API_KEY}",
+        "CLICKUP_TEAM_ID": "${CLICKUP_TEAM_ID}"
+      }
+    }
+  }
+}
