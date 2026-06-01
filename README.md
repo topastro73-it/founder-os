@@ -1,5 +1,11 @@
 # 🏢 founder-os
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-d97757)](https://claude.com/claude-code)
+[![Agents](https://img.shields.io/badge/agents-10-blue)](.agents/AGENTS.md)
+[![Skills](https://img.shields.io/badge/skills-28-blue)](.skills/SKILLS.md)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
+
 > Run your B2B SaaS startup like code. An agentic operating system you run inside [Claude Code](https://claude.com/claude-code).
 >
 > Gestisci la tua startup B2B SaaS come se fosse codice. Un sistema operativo agentico che vive dentro Claude Code.
