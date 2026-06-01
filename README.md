@@ -29,6 +29,36 @@ Everything is plain Markdown. Every action produces a file. Every file is versio
 
 > Not sure what good looks like? See [`examples/acme-demo/`](examples/acme-demo/) — a fully filled-in fictional company you can read or copy from.
 
+### Demo
+
+```text
+you ▸ /setup
+
+🚀 Onboarding Agent
+   Welcome to founder-os! I'll ask ~10 questions (5 min) to configure the system.
+   Detected machine: MacBook Pro M3 — registered.
+   First: what's your name?
+
+you ▸ Mario Rossi
+
+   Step 1 — Company identity. What's your company called?
+you ▸ Acme
+   One-liner — what do you do, in one sentence?
+you ▸ The onboarding-automation platform for B2B SaaS companies.
+   ... (8 more steps: team, vision, segments, roadmap, KPIs, cadence, integrations)
+
+✅ Setup complete. Try:  /routine start  ·  /pm write-spec  ·  /sales pipeline-review
+
+you ▸ /pm write-spec
+
+🎯 Product Manager
+   Reading COMPANY.md, vision, roadmap... drafting a PRD for "bulk import".
+   → wrote company/product/specs/bulk-import.md
+   → committed:  [pm] spec: PRD for bulk import
+```
+
+Every command reads your shared context, writes to the right folder, and commits — so your company's history lives in git.
+
 ### What's inside
 
 | Layer | What |
