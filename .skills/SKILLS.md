@@ -32,6 +32,7 @@ Sono organizzate in due categorie:
 | **NotebookLM** | CEO | `.skills/notebooklm/SKILL.md` | CEO, PM, CTO, Chief of Staff, Sales, Legal | AI-powered document analysis, insights |
 | **Personal Todo** | CEO | `.skills/personal-todo/SKILL.md` | CEO (owner), CEO Routine | To-do list personale del CEO — add, list, done, review |
 | **System Admin** | CEO | `.skills/system-admin/SKILL.md` | CEO (owner), tutti gli agenti | Changelog, checkpoint e rollback del sistema founder-os |
+| **Skill Creator** | CEO | `.skills/skill-creator/SKILL.md` | Tutti (owner: CEO) | Guida conversazionale per creare nuove skill senza conoscenze tecniche |
 | **QA & Testing** | CTO | `.skills/qa-testing/SKILL.md` | CTO (owner), PM | Test plan, test case, test report, smoke/security test |
 
 ---

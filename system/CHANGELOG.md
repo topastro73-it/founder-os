@@ -13,6 +13,15 @@ Registro di tutte le modifiche significative all'architettura, alle logiche e al
 
 ---
 
+## v1.1.1 — 2026-06-06
+
+### feat | nuova skill: skill-creator | .skills/skill-creator/
+**What**: Aggiunta skill `skill-creator` — guida conversazionale per creare nuove skill senza conoscenze tecniche. Claude conduce un'intervista in 7 domande (una alla volta), genera `SKILL.md`, aggiorna `SKILLS.md` e `CHANGELOG.md`, committa.
+**Why**: Abbassa la barriera per utenti non tecnici che vogliono estendere il sistema senza toccare file o terminale.
+**Impact**: MINOR — nuova skill standalone, nessun breaking change.
+
+---
+
 ## v1.1.0 — Sales CRM-in-repo: account↔opportunità, cockpit, aging, funnel
 
 ### feat | opportunity management: cockpit commerciale nel repo | .skills/ | .agents/sales | scripts/ | company/customers/
