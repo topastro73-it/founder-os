@@ -13,6 +13,15 @@ Registro di tutte le modifiche significative all'architettura, alle logiche e al
 
 ---
 
+## v1.1.2 — 2026-06-06
+
+### feat | nuova skill: agent-creator | .skills/agent-creator/
+**What**: Aggiunta skill `agent-creator` — guida conversazionale per creare nuovi agenti senza conoscenze tecniche. Claude conduce un'intervista in 9 domande (una alla volta), genera `AGENT.md`, `COMMANDS.md`, cartella `commands/`, aggiorna `AGENTS.md` e `CHANGELOG.md`, committa.
+**Why**: Complementare a `skill-creator` — abbassa la barriera per estendere il sistema con nuovi ruoli senza toccare file o terminale.
+**Impact**: MINOR — nuova skill standalone, nessun breaking change.
+
+---
+
 ## v1.1.1 — 2026-06-06
 
 ### feat | nuova skill: skill-creator | .skills/skill-creator/
