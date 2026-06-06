@@ -87,8 +87,11 @@ You: "/pm write-spec"
 
 The rules that govern all of this live in [`CLAUDE.md`](CLAUDE.md).
 
-### License
-MIT — see [`LICENSE`](LICENSE). Use it, fork it, make it yours.
+### License & support
+MIT — see [`LICENSE`](LICENSE). Use it, fork it, make it yours. Provided as-is: no guaranteed support, no promised updates. Open an issue if something's broken, but treat this as a starting point you own, not a maintained product.
+
+### Where this comes from
+I run my own company on a version of this system, and write about it (the design choices, what works, what rots) in my newsletter. If you want the story behind the structure, start with the build-it-from-scratch guide.
 
 ---
 
@@ -123,8 +126,11 @@ Tutto è Markdown. Ogni azione genera un file. Ogni file è versionato.
 4. `company/customers/segments.md` — Per chi lavori
 5. `company/metrics/kpis.md` — Come stai andando
 
-### Licenza
-MIT — vedi [`LICENSE`](LICENSE).
+### Licenza e supporto
+MIT — vedi [`LICENSE`](LICENSE). Te lo do com'è: nessun supporto garantito, nessun aggiornamento promesso. Apri pure una issue se qualcosa è rotto, ma trattalo come un punto di partenza che possiedi, non come un prodotto mantenuto.
+
+### Da dove arriva
+Mando avanti la mia azienda su una versione di questo sistema, e ne scrivo (le scelte di design, cosa funziona, cosa marcisce) nella mia newsletter. Se vuoi la storia dietro la struttura, parti dalla guida che spiega come costruirlo da zero.
 
 ---
 
