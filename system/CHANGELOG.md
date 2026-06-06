@@ -13,6 +13,24 @@ Registro di tutte le modifiche significative all'architettura, alle logiche e al
 
 ---
 
+## v1.1.0 — Sales CRM-in-repo: account↔opportunità, cockpit, aging, funnel
+
+### feat | opportunity management: cockpit commerciale nel repo | .skills/ | .agents/sales | scripts/ | company/customers/
+**What**: Aggiunto un sistema CRM-leggero versionato nel repo, con il repo come source of truth della pipeline (un CRM esterno resta opzionale).
+- **Modello dati**: livello **Opportunità** separato dall'**Account** (1 account → N trattative). `company/customers/opportunities/` + `TEMPLATE.md`; account template ristrutturato con indice Opportunità.
+- **Skill** `.skills/opportunity-management/SKILL.md` (owner Sales): modello, tassonomia 6 stage + probabilità, regole aging a fasce, board, drill-down, pattern funnel. In `SKILLS.md`.
+- **Comandi Sales**: `/sales board` (lancia lo script generatore) e `/sales opportunity` (drill-down/update); `pipeline-review` legge le opportunità. `COMMANDS.md` + `AGENT.md` aggiornati (8→10 comandi).
+- **Script** `scripts/generate-pipeline.py`: genera `PIPELINE.md` da `opportunities/*.md` + `pipeline-config.yaml` (target, segmenti, soglie aging). Aging calcolato live; colonna + subtotali per segmento; nessuna dipendenza esterna (yaml fallback).
+- **Config** `company/customers/pipeline-config.yaml`: target weighted, stage→prob, segmenti, soglie aging — personalizzabile via /setup.
+- **Aging proattivo** agganciato a `ceo-routine/start`, `customer-success/alert-check`, CoS `daily-briefing` + `weekly-digest` (fasce 🟡/🟠/🔴).
+- **Funnel di prospecting**: template `company/customers/target-funnel.md` + playbook "importa e consolida da fonti sparse".
+- **Dedup wiki**: `system/protocols/wiki.md` — entity partner = sola narrativa, account = SoT.
+- **Esempio**: `examples/acme-demo/customers/` con 5 account + 6 opportunità + `PIPELINE.md` generato.
+**Why**: dare a founder/Direttore Commerciale una vista d'insieme sempre disponibile (dove sono ferme le trattative e perché) con drill-down, senza dipendere da un CRM esterno scollegato.
+**Scope**: additivo. Nessun agente rimosso. Output rules CLAUDE.md aggiornate.
+
+---
+
 ## v1.0.0 — Initial public release
 
 ### feat | founder-os | sistema completo

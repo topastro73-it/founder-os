@@ -17,8 +17,18 @@ Genera risposta strutturata a un'obiezione ricorrente.
 → Leggi: `commands/objection-handler.md`
 → Output: `docs/internal-memos/objection-{slug}.md`
 
+### `/sales board`
+Rigenera il cockpit commerciale: vista sinottica di tutte le opportunità, bloccati & aging in cima, per segmento/stage/owner.
+→ Leggi: `commands/board.md` · Skill: `.skills/opportunity-management/SKILL.md`
+→ Esegue: `python scripts/generate-pipeline.py` → Output: `company/customers/PIPELINE.md`
+
+### `/sales opportunity [opp-slug]`
+Drill-down e aggiornamento di una trattativa: crea/sposta stage/logga attività/gestisci blocker.
+→ Leggi: `commands/opportunity.md` · Skill: `.skills/opportunity-management/SKILL.md`
+→ Output: `company/customers/opportunities/{opp-slug}.md`
+
 ### `/sales pipeline-review`
-Analizza la pipeline corrente: health, rischi, forecast.
+Analizza la pipeline corrente (report narrativo): health, rischi, velocity, forecast. Legge le opportunità strutturate del repo.
 → Leggi: `commands/pipeline-review.md`
 → Output: `docs/reports/pipeline-review-{date}.md`
 

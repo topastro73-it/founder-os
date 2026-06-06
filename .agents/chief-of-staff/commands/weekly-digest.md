@@ -41,7 +41,12 @@
 
    Se non ci sono spec stale, ometti la sezione.
 
-6. **Outlook settimana prossima**
+6. **Pipeline — health & aging settimanale** (live da `company/customers/opportunities/*.md`, skill `.skills/opportunity-management/SKILL.md`)
+   - Coverage weighted vs target, distribuzione per stage e per segmento, movimenti di stage della settimana.
+   - Top trattative bloccate/aging (🔴🟠) con giorni fermi e blocco; opportunità senza owner.
+   - Suggerisci `/sales board` se `PIPELINE.md` è stale.
+
+7. **Outlook settimana prossima**
    - Follow-up con scadenza nei prossimi 7 giorni
    - Epic o milestone previsti per la settimana
    - Riunioni o review programmate (se tracciate nel repo)
@@ -53,6 +58,9 @@
 
    ### Output per agente
    [tabella o sezioni per agente]
+
+   ### Pipeline — health & aging
+   [coverage vs target, movimenti stage, top bloccati/aging, opportunità senza owner]
 
    ### Decisioni prese
    [lista con stato]

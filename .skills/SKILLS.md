@@ -15,6 +15,7 @@ Sono organizzate in due categorie:
 | **ClickUp** | PM | `.skills/clickup/SKILL.md` | PM, CTO, Chief of Staff | ClickUp API — gestione task, epic, roadmap |
 | **Gmail** | Chief of Staff | `.skills/gmail/SKILL.md` | **Tutti gli agenti** | Gmail API — mailbox CEO, brief, tracking |
 | **Customer Success** | Sales | `.skills/customer-success/SKILL.md` | Sales (owner), CEO, Chief of Staff | Gestione churn, NPS, expansion, QBR |
+| **Opportunity Management** | Sales | `.skills/opportunity-management/SKILL.md` | Sales (owner), Chief of Staff, CEO Routine, CFO | Modello account↔opportunità, pipeline stage, aging, board cockpit, drill-down deal, funnel prospecting |
 | **Partner Onboarding** | Sales | `.skills/partner-onboarding/SKILL.md` | Sales, PM, Chief of Staff | Onboarding partner, schede, timeline |
 | **Data & Metrics** | CFO | `.skills/data-metrics/SKILL.md` | CEO, CFO, PM, Chief of Staff | KPI, dashboard, reporting |
 | **Investor Relations** | CFO | `.skills/investor-relations/SKILL.md` | CEO, CFO, Legal | Investor updates, pitch prep, cap table |

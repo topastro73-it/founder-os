@@ -46,6 +46,11 @@
    - Decisioni aperte senza owner o senza data
    - Dipendenze critiche a rischio (leggi `docs/reports/` più recente del CTO/PM)
 
+3b. **Pipeline — bloccati & aging** (live da `company/customers/opportunities/*.md`, skill `.skills/opportunity-management/SKILL.md`)
+   - Calcola l'aging (sezione 3 della skill) e includi i top 🔴🟠: opportunità, account, blocco, owner, giorni fermi, next step.
+   - Evidenzia le opportunità **senza owner** e quelle con weighted alto bloccate.
+   - Se `company/customers/PIPELINE.md` è stale (> 3 giorni), segnalalo e suggerisci `/sales board`.
+
 4. **Priorità per oggi**
    - Lista le 3-5 azioni più urgenti per il CEO oggi
    - Per ognuna: contesto in 1 riga, cosa serve fare, quanto tempo stimato
@@ -60,6 +65,9 @@
 
    ### Richiede la tua attenzione oggi
    [azioni urgenti con scadenza, escalation, blocchi]
+
+   ### Pipeline — bloccati & aging
+   [top 🔴🟠 dalle opportunità: deal, blocco, owner, giorni fermi, next step. Evidenzia no-owner e weighted alto.]
 
    ### Priorità CEO per oggi
    1. ...

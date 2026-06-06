@@ -69,7 +69,8 @@
    - Leggi `company/product/specs/INDEX.md` per stato spec
    - Leggi `company/metrics/kpis.md` per freshness metriche
    - Scansiona `decisions/` per decisioni aperte
-   - Scansiona `company/customers/partners/` per alert partner
+   - Scansiona `company/customers/partners/` per alert partner (health < 60)
+   - **Scansiona `company/customers/opportunities/*.md` per aging trattative** (skill `.skills/opportunity-management/SKILL.md`, sezione 3): calcola l'aging live da `last-activity`/`next-step-due`/`blockers` e prepara i top 🔴🟠 (account, blocco, giorni fermi, owner, next step). Mostrali nel blocco di apertura e includi i 🔴 nelle URGENZE. Soglie da `company/customers/pipeline-config.yaml`. Segnala in evidenza le opportunità **senza owner** e quelle con weighted alto bloccate.
    - Leggi `personal/todo.md` per i task personali di oggi (sezione `🔥 Oggi`)
 
 2. **Wiki Context — "Dove eravamo rimasti"**

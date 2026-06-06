@@ -28,3 +28,18 @@ automatizzando i playbook di onboarding e misurando il time-to-value.
 | `segments.md` | `company/customers/segments.md` |
 | `roadmap.md` | `company/product/roadmap.md` |
 | `kpis.md` | `company/metrics/kpis.md` |
+| `customers/pipeline-config.yaml` | `company/customers/pipeline-config.yaml` |
+| `customers/partners/*.md` | `company/customers/partners/*.md` (account: Globex, Hooli, Initech, Umbrella, Wayne) |
+| `customers/opportunities/*.md` | `company/customers/opportunities/*.md` (6 trattative) |
+| `customers/PIPELINE.md` | `company/customers/PIPELINE.md` (cockpit **generato**) |
+| `customers/target-funnel.md` | `company/customers/{canale}-funnel.md` |
+
+### Cockpit commerciale (CRM-in-repo)
+
+`customers/` mostra il sistema **account ↔ opportunità ↔ cockpit** con aging e segmenti. Per rigenerare il board:
+
+```
+python scripts/generate-pipeline.py --base examples/acme-demo/customers --date 2026-06-05
+```
+
+(In uso reale: `python scripts/generate-pipeline.py` senza argomenti, con la data di oggi.) Vedi `.skills/opportunity-management/SKILL.md`.

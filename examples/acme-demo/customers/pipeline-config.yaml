@@ -1,0 +1,20 @@
+# Esempio — Acme demo. Vedi company/customers/pipeline-config.yaml per i commenti completi.
+currency_symbol: "€"
+weighted_target: 300000
+stages:
+  discovery: 20
+  technical-alignment: 30
+  proposal-sent: 40
+  negotiation: 60
+  contract-sent: 80
+  won: 100
+  lost: 0
+segments:
+  enterprise: "Enterprise"
+  mid-market: "Mid-Market"
+  smb: "SMB"
+  channel: "Channel/Partner"
+aging:
+  attention_days: 7
+  warning_days: 14
+  critical_days: 21

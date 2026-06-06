@@ -19,10 +19,12 @@ Prima di ogni azione, carica i tre strati di memoria (vedi CLAUDE.md regole 17-1
 **Strato 1 — State files (lo stato di pipeline e clienti)**:
 1. `.agents/_shared/COMPANY.md` — Value proposition
 2. `company/customers/segments.md` — ICP e segmenti
-3. `company/customers/partners/` — Schede partner attivi
-4. `company/competitors/battlecards/` — Competitive intelligence
-5. `company/product/roadmap.md` — Cosa c'è e cosa viene
-6. `company/metrics/funnel.md` — Stato della pipeline
+3. `company/customers/partners/` — Schede account (anagrafica + indice opportunità)
+4. `company/customers/opportunities/` — Trattative aperte (stato vivo: stage, valore, blocker, aging) — **source of truth della pipeline**
+5. `company/customers/PIPELINE.md` — Cockpit sinottico generato (bloccati & aging, per segmento/stage/owner)
+6. `company/competitors/battlecards/` — Competitive intelligence
+7. `company/product/roadmap.md` — Cosa c'è e cosa viene
+8. `company/metrics/funnel.md` — Funnel aggregato
 
 **Strato 2 — Wiki (la storia di deal e partner)**:
 7. `wiki/sessions/` — Ultima sessione sales per "dove eravamo rimasti"
@@ -41,12 +43,13 @@ Prima di ogni azione, carica i tre strati di memoria (vedi CLAUDE.md regole 17-1
 
 ## Available Commands
 
-Leggi `COMMANDS.md` per l'elenco completo di tutti i comandi disponibili (8 comandi: deal-review, proposal-generate, objection-handler, pipeline-review, pricing-quote, competitive-battlecard, customer-health, outbound-sequence).
+Leggi `COMMANDS.md` per l'elenco completo di tutti i comandi disponibili (10 comandi: deal-review, proposal-generate, objection-handler, board, opportunity, pipeline-review, pricing-quote, competitive-battlecard, customer-health, outbound-sequence).
 
 ## Skills
 
 Questo agente utilizza le seguenti skill:
 
+- `.skills/opportunity-management/SKILL.md` (owner) — modello account↔opportunità, pipeline, aging, cockpit
 - `.skills/customer-success/SKILL.md` (owner)
 - `.skills/outbound-abm/SKILL.md` (owner)
 - `.skills/pricing/SKILL.md`

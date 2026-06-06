@@ -1,0 +1,36 @@
+# Pipeline / Cockpit configuration
+# Letto da scripts/generate-pipeline.py per generare company/customers/PIPELINE.md.
+# Compilabile via /setup. I default sono ragionevoli per un B2B SaaS — personalizzali.
+
+# Valuta mostrata nel board
+currency_symbol: "€"
+
+# Target di pipeline WEIGHTED. coverage = weighted_open / weighted_target.
+weighted_target: 500000        # {{PIPELINE_TARGET}}
+
+# Tassonomia stage → probabilità (%). Standard B2B a 6 stage + lost. Personalizzabile.
+# La probability nelle opportunità deve corrispondere allo stage (lo script la usa per il weighted check).
+stages:
+  discovery: 20
+  technical-alignment: 30
+  proposal-sent: 40
+  negotiation: 60
+  contract-sent: 80
+  won: 100
+  lost: 0
+
+# Segmenti: key tecnica (usata nel frontmatter `segment:` delle opportunità) → etichetta mostrata.
+# Allinea le key a company/customers/segments.md. Esempi B2B generici qui sotto.
+# (Es. reale Cyberangels: telco-tier1, isp-tier2, msp-mssp, vendor-channel, tic)
+segments:
+  enterprise: "Enterprise"
+  mid-market: "Mid-Market"
+  smb: "SMB"
+  channel: "Channel/Partner"
+
+# Soglie aging in giorni. L'aging si calcola live da `last-activity` e `next-step-due`.
+# Vedi .skills/opportunity-management/SKILL.md sezione "Regole aging".
+aging:
+  attention_days: 7      # 🟡  fermo ≥ 7gg, o next-step scaduto ≤ 7gg
+  warning_days: 14       # 🟠  fermo ≥ 14gg, o next-step scaduto 8-14gg, o blocked > 7gg
+  critical_days: 21      # 🔴  fermo ≥ 21gg, o blocker severity=high, o next-step scaduto > 14gg

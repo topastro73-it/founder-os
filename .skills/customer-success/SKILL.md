@@ -165,6 +165,10 @@ File `docs/reports/expansion-{partner}-{YYYY-MM-DD}.md`
    - Utenti attivi < 30% degli onboarded → **LOW ENGAGEMENT**
    - Nessuna attivita referenti in 30+ giorni → **DORMANT**
    - Contratto in scadenza entro 60 giorni → **RENEWAL**
+4. **Aging trattative** — scansiona `company/customers/opportunities/*.md` (skill `.skills/opportunity-management/SKILL.md`, sezione 3) e genera alert per:
+   - `last-activity` oltre la soglia critical, o blocker `severity: high`, o next-step scaduto oltre la soglia warning → **STALLED 🔴**
+   - fermo oltre la soglia warning, o `status-flag: blocked` da oltre attention → **AGING 🟠**
+   - Opportunità open **senza `owner-sales`** → **NO-OWNER** (priorità: weighted alto)
 
 ### Output format
 ```

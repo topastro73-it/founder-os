@@ -15,7 +15,7 @@ Il wiki cattura il **perché** dietro i dati — decisioni, ragionamento, contes
 ## Struttura
 
 - `wiki/sessions/{YYYY-MM-DD}-{slug}.md` — una pagina per sessione, generata al close
-- `wiki/entities/partners/{slug}.md` — pagine partner che crescono nel tempo
+- `wiki/entities/partners/{slug}.md` — **solo timeline narrativa** del partner (storia, "perché"). NON duplica lo stato: niente "Current state"/"Open items"/owner/stage/valore. Quei dati vivono nell'account. La pagina porta in testa un puntatore all'account SoT.
 - `wiki/entities/features/{slug}.md` — storia delle feature
 - `wiki/entities/decisions/{slug}.md` — evoluzione decisioni
 - `wiki/entities/concepts/{slug}.md` — pensiero strategico
@@ -36,6 +36,7 @@ Al `/routine close` il sistema produce automaticamente la wiki page secondo il t
 - Estrai dal flusso reale della conversazione, non riassunti generici
 - Le promesse con deadline scaduta vanno nelle URGENZE del briefing successivo
 - Le entity pages crescono per accumulo (timeline), non si sovrascrivono
+- **Account = source of truth dello stato partner** (`company/customers/partners/{slug}.md`); la entity wiki è solo narrativa e linka all'account + alle opportunità (`company/customers/opportunities/`). Mai duplicare stato/owner/blocker/valore nella wiki. Vedi `.skills/opportunity-management/SKILL.md`.
 - Tutti i file wiki sono in inglese (vedi feedback memory)
 
 ## Privacy

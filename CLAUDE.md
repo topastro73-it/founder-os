@@ -72,7 +72,11 @@ Quando un comando richiede coordinamento tra più agenti, segui i workflow defin
 | Metriche | `company/metrics/` |
 | ClickUp sync pending | `company/product/clickup-pending/` |
 | ClickUp sync done | `company/product/clickup-done/` |
-| Schede partner | `company/customers/partners/{slug}.md` |
+| Schede partner / account | `company/customers/partners/{slug}.md` |
+| Opportunità / trattative (stato vivo: stage, valore, blocker, aging) | `company/customers/opportunities/{opp-slug}.md` |
+| Config pipeline (target, segmenti, soglie aging) | `company/customers/pipeline-config.yaml` |
+| Pipeline board / cockpit commerciale (generato) | `company/customers/PIPELINE.md` (`python scripts/generate-pipeline.py`) |
+| Funnel di prospecting (target list consolidata per canale) | `company/customers/{canale}-funnel.md` (template `target-funnel.md`) |
 | Report partner (review, QBR, churn, expansion) | `docs/reports/` |
 | Cap table, investor pipeline | `company/finance/` |
 | Investor updates, pitch prep, board prep | `docs/investor-updates/` |
