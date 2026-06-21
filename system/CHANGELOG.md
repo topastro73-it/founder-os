@@ -13,6 +13,21 @@ Registro di tutte le modifiche significative all'architettura, alle logiche e al
 
 ---
 
+## v1.1.3 — 2026-06-21 — Guardrail anti-deriva learnings (close + start)
+
+### feat | detector candidati learning non promossi (close Step 0.3.E + start Step 3b) | .agents/ceo-routine/commands/close.md, .agents/ceo-routine/commands/start.md, system/protocols/learnings.md
+**What**: Guardrail bidirezionale. **Al close** (Phase 0, Step 0.3.E + blocco recap Step 0.4) e **allo start**
+(Step 3b): scansiona le wiki-session degli ultimi 30 giorni, estrae i candidati nelle sezioni
+`## Learnings proposed` / `## Proposed learning (candidate)` e li ri-flagga al CEO finché non sono **promossi** a
+`LRN-XXX` o esplicitamente scartati (`→ scartato {data}`). Documentato in `system/protocols/learnings.md`
+(sezione "Guardrail anti-deriva").
+**Why**: la proposta di un candidato da sola non lo "consuma"; se la promozione viene saltata ai close i learning
+restano sepolti nelle wiki e `learnings.md` smette di crescere pur in presenza di pattern nuovi. Ora serve una
+decisione esplicita (promuovi / scarta), a inizio o fine sessione.
+**Impact**: PATCH — additivo alle routine esistenti, nessun breaking change.
+
+---
+
 ## v1.1.2 — 2026-06-06
 
 ### feat | nuova skill: agent-creator | .skills/agent-creator/

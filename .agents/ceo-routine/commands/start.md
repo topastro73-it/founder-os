@@ -97,6 +97,23 @@
      `⚡ Learning LRN-XXX applicabile: "{testo regola}"`
    - Max 1 learning segnalato nello start — non sommergere
 
+   **3b. Candidati learning non promossi** (guardrail anti-deriva — specchio di `close.md` Step 0.3.E)
+
+   Stesso check del close, ma a inizio giornata, per non aspettare il close per recuperarli:
+   - Scansiona le wiki-session degli **ultimi 30 giorni** cercando `## Learnings proposed` / `## Proposed learning (candidate)` / "candidate learning".
+   - Per ogni candidato, verifica se è già promosso (LRN corrispondente in `system/learnings.md` **o** nota `→ promosso … come LRN-XXX` nella sessione). Scarta quelli con `→ scartato {data}`.
+   - Se restano candidati non promossi → mostrali nel briefing (max 2, i più vecchi prima):
+
+     ```
+     🧠 Candidati learning mai promossi ({N})
+        • "{candidato breve}" (da [[{session-orig}]], {N}gg fa)
+        → Promuovo ora come LRN nuovo, oppure al prossimo close? [ora / close / scarta]
+     ```
+
+   - Se il CEO dice "ora" → promuovi (frontmatter `total`/`active`/`updated` + tag, entry CHANGELOG se tocca protocolli) e annota `→ promosso` nella sessione originale.
+   - Se "close" → lascialo, lo ripeschi al close (Step 0.3.E). Se "scarta" → annota `→ scartato {oggi}` nella sessione per silenziarlo.
+   - Se non ci sono candidati appesi, salta silenziosamente.
+
 4. **RAG Context per domande aperte** (opzionale)
    - Se l'ultima sessione wiki ha domande aperte non risolte:
      Per ogni domanda, esegui: `python3 scripts/rag-search.py --context "[domanda]"`

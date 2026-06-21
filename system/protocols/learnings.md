@@ -31,6 +31,16 @@ File unico `system/learnings.md` con frontmatter YAML e formato:
 
 Alla fine di ogni sessione (Phase 1, Step 6b di `close.md`), il sistema analizza la conversazione e propone max 2 pattern generalizzabili. Il CEO approva, modifica o scarta. **Mai salvare senza conferma**.
 
+## Guardrail anti-deriva (candidati non promossi)
+
+Fallimento tipico: le sessioni continuano a **proporre** candidati nelle proprie wiki (`## Learnings proposed`, `## Proposed learning (candidate)`), ma il passo di **promozione** in `system/learnings.md` viene saltato ai close → candidati sepolti e `learnings.md` fermo pur in presenza di pattern nuovi.
+
+Contromisura **bidirezionale** — stesso check a inizio e fine sessione (difesa in profondità):
+- **Al close** (`close.md`, Phase 0, Step 0.3 punto E): prima di chiudere.
+- **Allo start** (`start.md`, Step 3b): a inizio giornata, così non si aspetta il close per recuperarli.
+
+In entrambi i casi il sistema scansiona le wiki-session degli **ultimi 30 giorni**, estrae i candidati e verifica che ognuno sia stato promosso (LRN corrispondente in `learnings.md`, oppure nota `→ promosso … come LRN-XXX` nella sessione). I candidati non promossi vengono **ri-flaggati** al CEO finché non sono promossi o esplicitamente scartati (`→ scartato {data}`). Così la proposta non basta a "consumare" il candidato: serve una decisione esplicita (promuovi / scarta), e nulla resta appeso silenziosamente.
+
 ## Quando si applicano
 
 - Allo `/routine start`, il sistema carica i learnings in memoria (silenziosamente)

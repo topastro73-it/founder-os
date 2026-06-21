@@ -60,6 +60,16 @@ Per ogni entità toccata nelle ultime 7 sessioni e ancora attiva:
 - Se SÌ → l'aggiornamento entity (Step 4 di Phase 1) deve referenziare la timeline esistente
 - Se l'entità è cambiata di stato (es. partner da `onboarding` a `active`, feature da `in-development` a `shipped`) → aggiorna anche il "Current state" della entity page
 
+**E. Candidati learning non promossi** (guardrail anti-deriva)
+
+Per evitare che i learning proposti restino sepolti nelle wiki-session senza mai diventare `LRN-XXX` (la proposta da sola non basta: se il passo di promozione viene saltato ai close, `learnings.md` smette di crescere pur in presenza di pattern nuovi):
+
+- Scansiona le wiki-session **degli ultimi 30 giorni** (finestra estesa rispetto ai 7 della retrospective, perché un candidato può restare appeso a lungo) cercando le sezioni `## Learnings proposed`, `## Proposed learning (candidate)` o righe con "candidate learning".
+- Per ogni candidato trovato, verifica se è **già stato promosso**: cerca in `system/learnings.md` un LRN con concetto/fonte corrispondente, **oppure** una nota `→ promosso … come LRN-XXX` nella sessione originale.
+- Se **non** promosso → riportalo nel recap (Step 0.4) sotto "🧠 Candidati learning mai promossi".
+- Su conferma del CEO → promuovilo come nuovo `LRN-XXX` (riusa Step 6b), incrementa il frontmatter di `learnings.md` (`total`/`active`/`updated` + tag), e annota nella sessione originale `→ promosso {oggi} come LRN-XXX`. Aggiungi la entry in `system/CHANGELOG.md` se il batch tocca anche protocolli/agenti.
+- Se il CEO dice "no/più tardi" → lascia il candidato dov'è (non insistere), ma resterà flaggato ai close successivi finché non è promosso o esplicitamente scartato (aggiungi `→ scartato {oggi}` nella sessione per silenziarlo).
+
 #### Step 0.4 — Mostra al CEO il recap retrospective
 
 ```
@@ -78,6 +88,9 @@ Per ogni entità toccata nelle ultime 7 sessioni e ancora attiva:
 
 ⚡ Learnings applicabili NON segnalati
 - LRN-{YYY} ({titolo breve}) — vuoi marcarli come applicati?
+
+🧠 Candidati learning mai promossi (da sessioni precedenti, ultimi 30gg)
+- "{candidato}" (proposto in [[{session-orig}]] il {data}) — promuovo come LRN nuovo? [sì/scarta/più tardi]
 
 📂 Entità aggiornate dal retrospective
 - {entity-slug}: stato {old} → {new}
