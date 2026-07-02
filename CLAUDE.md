@@ -160,20 +160,31 @@ Ogni decisione importante segue il template in `decisions/TEMPLATE.md`. Le decis
     - Non bloccare mai il lavoro in attesa di un MCP — usa i file locali come fallback (es. `company/product/clickup-done/` per stato task, `company/customers/` per dati partner)
     - Se il task richiede *necessariamente* l'MCP (es. creare un task su ClickUp), prepara il file in `clickup-pending/` e segnala: "ClickUp non disponibile — file pronto, eseguirò al prossimo avvio con MCP attivo"
 
-15. **Close Routine** — `/routine close` oppure `/close` da qualsiasi agente: procedura standard per committare e pushare tutte le modifiche del repo al termine di una sessione, funzionante da qualsiasi macchina.
+15. **Close Routine** — `/routine close` oppure `/close` da qualsiasi agente: procedura standard per registrare la wiki di sessione, committare e pushare tutte le modifiche del repo al termine di una sessione, funzionante da qualsiasi macchina.
+
+    ⚠️ **La generazione/aggiornamento della wiki di sessione (Phase 1 di `close.md`) è OBBLIGATORIA ad ogni
+    close, non opzionale** — non saltare mai direttamente al solo flusso git. L'unica eccezione ammessa è una
+    sessione senza alcun contenuto sostanziale (repo già clean, nessun file toccato): in quel caso, e solo in
+    quel caso, si può dichiararlo e fermarsi senza wiki. Vedi `system/learnings.md` (LRN-002 in astrolize-os,
+    da replicare qui se il gap si ripresenta) — questo passo era stato saltato una volta perché il flusso
+    sintetico sotto non lo menzionava esplicitamente.
 
     **Flusso sintetico**:
     1. Identifica macchina (`scutil --get LocalHostName`)
-    2. `git add -A` → commit con messaggio `[routine] close: YYYY-MM-DD [NomeMacchina]`
-    3. `git fetch origin` → verifica divergenze con remote
-    4. Se remote ha commit nuovi → `git merge origin/main --no-edit`
-    5. **Conflitti**: tenta risoluzione automatica (`union` per file `.md`/`.yaml`/`.json`; `ours` per file di sistema critici); crea `CONFLICTS.md` con log dettagliato per file non risolvibili; notifica il CEO
-    6. `git push origin main` (con fallback `--rebase` se rejected)
-    7. Mostra summary finale (commit SHA, files, push status, conflitti)
+    2. **Genera/aggiorna la wiki di sessione** `wiki/sessions/YYYY-MM-DD-{slug}.md` (+ entity pages toccate in
+       `wiki/entities/`, + `wiki/index.md`) — Phase 1 completa in `close.md` (retrospective, decisioni,
+       promesse, domande aperte, eventuali nuovi LRN). Salta solo se non c'è nulla di sostanziale da registrare.
+    3. `git add -A` → commit con messaggio `[routine] close: YYYY-MM-DD [NomeMacchina]` (o `[wiki] session: ...`
+       se la wiki è stata generata — vedi formato in `close.md` Step 11)
+    4. `git fetch origin` → verifica divergenze con remote
+    5. Se remote ha commit nuovi → `git merge origin/main --no-edit`
+    6. **Conflitti**: tenta risoluzione automatica (`union` per file `.md`/`.yaml`/`.json`; `ours` per file di sistema critici); crea `CONFLICTS.md` con log dettagliato per file non risolvibili; notifica il CEO
+    7. `git push origin main` (con fallback `--rebase` se rejected)
+    8. Mostra summary finale (commit SHA, files, push status, wiki generata, conflitti)
 
     **Regole**:
     - Mai `git reset --hard` o `git push --force`
-    - Se repo è già clean (nessuna modifica), lo dichiara e si ferma
+    - Se repo è già clean (nessuna modifica) E non c'è nulla da registrare in wiki, lo dichiara e si ferma
     - Se non c'è remote configurato, esegue solo commit locale e notifica
     - Esegue sempre da `main` — se branch diverso, avvisa prima
     - Dettaglio completo in `.agents/ceo-routine/commands/close.md`
