@@ -13,6 +13,39 @@ Registro di tutte le modifiche significative all'architettura, alle logiche e al
 
 ---
 
+## v1.1.5 — fix: cadence log scritto al close, non solo allo start
+
+### fix | ceo-routine: cadence log write spostato da `start` a `close` + freshness check | .agents/ceo-routine/AGENT.md .agents/ceo-routine/commands/start.md .agents/ceo-routine/commands/close.md system/protocols/ceo-decision-cadence.md
+**What**: l'aggiornamento di `company/ceo-cadence.md` era specificato in un solo punto, lo Step 8 di
+`start.md`, in mezzo a un'interazione lunga col CEO. Una scrittura obbligatoria collocata così non è
+affidabile: se la sessione prosegue su altro, lo step non scatta, e nessun errore lo segnala.
+- **Scrittura obbligatoria** spostata a `close.md` (nuovo Step 6b.7): il close è il punto che il CEO
+  invoca comunque per chiudere la giornata.
+- **Freshness check** aggiunto a `start.md` (nuovo Step 0.6): confronta le date di `ceo-cadence.md`
+  con l'ultima sessione wiki reale; se il gap supera 5 giorni, propone il riallineamento.
+- Documentato in `system/protocols/ceo-decision-cadence.md` (nuova sezione "Cadence Log Freshness
+  Check") e in `AGENT.md` (due nuove righe nella tabella dei self-healing check).
+**Why**: senza un secondo livello di controllo indipendente dalla scrittura, lo stesso pattern
+silenzioso si ripete se anche il nuovo trigger dovesse saltare una volta.
+**Scope**: additivo, nessun comando rimosso o rinominato.
+
+---
+
+## v1.1.4 — feat: protocollo di ingestion dei meeting (MoM)
+
+### feat | system/protocols/meetings.md: come i minute di riunione entrano nel sistema | system/protocols/meetings.md docs/meetings/
+**What**: nuovo protocollo che instrada il contenuto di un MoM verso i layer esistenti (opportunità,
+decisioni, wiki, finance, promesse, backlog, learnings) invece di lasciarlo intrappolato in note grezze,
+con un solo audit trail per meeting. Flusso: drop del MoM grezzo in `docs/meetings/inbox/`, estrazione e
+fan-out verso i layer, scrittura del MoM strutturato in `docs/meetings/{data}-{slug}.md`, indicizzazione
+in `docs/meetings/index.md`. Gate privacy coerente con CLAUDE.md §20-21 (mai 🔴 fuori da
+`company/finance/` o `company/legal/`).
+**Why**: le riunioni producono decisioni, movimenti di pipeline e regole riutilizzabili che altrimenti
+restano solo nella trascrizione grezza. Il protocollo dà loro una destinazione strutturata, unica.
+**Scope**: additivo. Nuova cartella `docs/meetings/` con scaffold iniziale vuoto.
+
+---
+
 ## v1.1.3 — 2026-06-21 — Guardrail anti-deriva learnings (close + start)
 
 ### feat | detector candidati learning non promossi (close Step 0.3.E + start Step 3b) | .agents/ceo-routine/commands/close.md, .agents/ceo-routine/commands/start.md, system/protocols/learnings.md

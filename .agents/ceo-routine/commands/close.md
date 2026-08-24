@@ -267,6 +267,19 @@ Leggi `personal/todo.md` e controlla la sezione `## 🔥 Oggi`:
 - Le modifiche a `personal/todo.md` saranno incluse nel commit di Phase 2
 - Se `Oggi` è già vuota, salta silenziosamente
 
+#### Step 6b.7 — Aggiorna il cadence log (obbligatorio)
+
+Aggiorna `company/ceo-cadence.md` (vedi `system/protocols/ceo-decision-cadence.md`):
+- Sezione "Ultimo check per ritmo": aggiorna la data per **giornaliero** sempre; per **settimanale** se
+  questa è la prima sessione della settimana (lunedì); per **mensile** se prima sessione del mese
+- Sezione "Log risposte recenti": aggiungi una riga con data, tipo di routine eseguita, e un riassunto
+  di una riga della sessione
+
+Questo passo è **obbligatorio quanto la generazione della wiki** (Step 3): non deve dipendere
+dall'essere ricordato durante un'interazione lunga. Se il close avviene senza aver mai eseguito lo
+Step 8 di `start.md` in questa sessione (es. il CEO ha aperto lavorando già su un altro agente), esegui
+comunque questo aggiornamento prima di committare. Le modifiche entrano nel commit di Phase 2.
+
 #### Step 6c — Proponi reminder ClickUp per promesse (opzionale)
 Se nella sessione sono emerse promesse con deadline:
 ```

@@ -63,6 +63,20 @@
    - Date prima di 2026-04-25 (attivazione del sistema wiki — sessioni precedenti non hanno wiki by design)
    - Se il check è già stato fatto nella stessa giornata → skip silenzioso
 
+0.6. **Cadence Log Freshness Check** (vedi `system/protocols/ceo-decision-cadence.md`)
+
+   Confronta la data più recente presente in `company/ceo-cadence.md` (qualunque ritmo) con la data del
+   file più recente in `wiki/sessions/`. Se la differenza supera **5 giorni**, il cadence log è stale
+   (probabile step 8 non eseguito in sessioni precedenti):
+
+   ```
+   ⚠️ Cadence log fermo al {data-cadence}, ultima sessione reale {data-wiki} — lo riallineo a oggi?
+   ```
+
+   Se il CEO conferma → aggiorna solo le date correnti dei ritmi applicabili oggi (non backfillare la
+   storia persa a meno che il CEO lo chieda esplicitamente). Se la differenza è ≤5 giorni, procedi
+   silenziosamente.
+
 1. **Carica contesto**
    - Leggi `company/ceo-cadence.md` per determinare il ritmo
    - Leggi `company/ceo-routine.md` per preferenze e promesse aperte

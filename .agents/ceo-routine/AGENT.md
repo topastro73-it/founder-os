@@ -101,7 +101,9 @@ Per ridurre la dipendenza dalla disciplina del CEO ("ricordati di chiudere"), l'
 | Check | Quando | Cosa fa |
 |-------|--------|---------|
 | Stale Session Detector | Step 0 di `start` | Rileva sessioni con cadence entry ma senza wiki, propone recovery |
+| Cadence Log Freshness | Step 0.6 di `start` | Confronta le date di `ceo-cadence.md` con l'ultima sessione wiki reale; se il gap supera 5gg, propone il riallineamento (vedi `system/protocols/ceo-decision-cadence.md`) |
 | Cadence vs Wiki sync | Step 0 di `start` | Verifica che entity pages e learning counters riflettano cadence |
+| Cadence log write | Step 6b.7 di `close` | Scrittura obbligatoria di `ceo-cadence.md` agganciata al close (non solo allo Step 8 di `start`) — stesso principio applicato alla wiki di sessione |
 | Lettura completa dei 3 layer | Sempre (Step 1-3) | Mai basarsi solo sul wiki: leggere anche cadence log + learnings + state files (vedi LRN-012) |
 
 **Principio**: se la conoscenza è in cadence ma non è propagata ai layer di lettura primaria (wiki / partner page / learning counters), il sistema deve auto-ripararsi al prossimo start, non lasciare che il CEO debba ripetere. Lo abbiamo imparato il 2026-05-07 (LRN-012).

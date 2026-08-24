@@ -165,9 +165,10 @@ Ogni decisione importante segue il template in `decisions/TEMPLATE.md`. Le decis
     ⚠️ **La generazione/aggiornamento della wiki di sessione (Phase 1 di `close.md`) è OBBLIGATORIA ad ogni
     close, non opzionale** — non saltare mai direttamente al solo flusso git. L'unica eccezione ammessa è una
     sessione senza alcun contenuto sostanziale (repo già clean, nessun file toccato): in quel caso, e solo in
-    quel caso, si può dichiararlo e fermarsi senza wiki. Vedi `system/learnings.md` (LRN-002 in astrolize-os,
-    da replicare qui se il gap si ripresenta) — questo passo era stato saltato una volta perché il flusso
-    sintetico sotto non lo menzionava esplicitamente.
+    quel caso, si può dichiararlo e fermarsi senza wiki. Un close che salta la wiki lascia contatori dei
+    learning fermi e promesse sospese senza che nessuno se ne accorga fino alla sessione successiva — è
+    esattamente il tipo di regressione silenziosa che lo Stale Session Detector (§ AGENT.md) esiste per
+    intercettare, ma prevenirla qui costa meno che ripararla dopo.
 
     **Flusso sintetico**:
     1. Identifica macchina (`scutil --get LocalHostName`)
